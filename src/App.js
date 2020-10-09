@@ -16,7 +16,7 @@ function App() {
     db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot =>{
       // console.log(snapshot.docs.map(doc => doc.data()))
 
-      setTodos(snapshot.docs.map(doc => doc.data().todo))
+      setTodos(snapshot.docs.map(doc => ({id:doc.id,todo:doc.data().todo})))
     })
   },[]);
 
@@ -34,7 +34,8 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Utilosoft @Learn </h1>
+      <h1>Faizan @Learn </h1>
+      <h3>Todo App</h3>
       <form >
         <FormControl>
           <InputLabel>Write a Todo</InputLabel>
@@ -47,7 +48,7 @@ function App() {
         {/* the curly braces are from jsx and the .map is from es6 . map is used for looping */}
         {/* it goes in todos, uses a var as todo, picks up the first todo from the array and displays using jsx {todo} */}
         {todos.map(todo=>(
-         <Todo text={todo}/>
+         <Todo todo={todo}/>
         ))}
           
       </ul>
