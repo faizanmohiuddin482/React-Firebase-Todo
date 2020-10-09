@@ -1,6 +1,9 @@
 
 
-## Fork The Repo
+## React + Firebase Todo App
+
+View the deployed version : https://todo-app-25113.web.app/
+* Just don't spam the Todo App.
 
 In the project directory, you can run:
 
